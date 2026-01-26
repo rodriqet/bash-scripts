@@ -1,23 +1,22 @@
-Password Generator (Bash)
+# Bash Scripts Collection
 
-Descripción
-Este proyecto consiste en un generador de contraseñas interactivo desarrollado en Bash.
-Permite al usuario generar contraseñas seguras personalizando su longitud y los tipos de caracteres incluidos, y guarda automáticamente las contraseñas generadas en un archivo de texto.
-Es un script orientado a aprendizaje de Bash, validación de entradas y manejo básico de ficheros en sistemas Linux.
+Este repositorio contiene una colección de **scripts desarrollados en Bash** con fines prácticos y educativos. Cada script resuelve una necesidad concreta relacionada con la automatización de tareas en sistemas Linux.
 
-Funcionalidades
-Menú interactivo en terminal
-Generación de contraseñas con:
-Longitud configurable (entre 8 y 32 caracteres)
-Letras minúsculas (siempre incluidas)
-Letras mayúsculas (opcional)
-Números (opcional)
-Caracteres especiales (opcional)
-Validación de entradas del usuario
-Almacenamiento automático de contraseñas en un archivo passwords.txt
-Ejecución continua hasta que el usuario decide salir
+## Requisitos
 
-Requisitos
-Sistema operativo Linux o entorno compatible (WSL, macOS)
-Bash
-Permisos de ejecución sobre el archivo .sh
+- Sistema operativo Linux
+- Bash
+- Zenity (solo necesario para `bank_zenity.sh`)
+
+## Uso
+
+1. Dar permisos de ejecución al script:
+   chmod +x nombre_del_script.sh
+   
+3. Ejecutar el script:
+   ./nombre_del_script.sh
+
+o simplemente
+
+1. Ejecutar el script:
+   bash nombre_del_script.sh
