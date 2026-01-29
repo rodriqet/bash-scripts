@@ -8,22 +8,13 @@
 
 # -------- VARIABLES --------
 LOG_FILE="devhelper.log"
-USE_COLORS=true
+
 
 # -------- COLORES --------
-if $USE_COLORS; then
-    GREEN="\e[32m"
-    RED="\e[31m"
-    YELLOW="\e[33m"
-    BLUE="\e[34m"
-    RESET="\e[0m"
-else
-    GREEN=""
-    RED=""
-    YELLOW=""
-    BLUE=""
-    RESET=""
-fi
+GREEN="\e[32m"
+RED="\e[31m"
+RESET="\e[0m"
+
 
 # -------- FUNCIONES GENERALES --------
 pause() {
@@ -147,6 +138,7 @@ run_project() {
         *) echo "Opción no válida" ;;
     esac
 
+    log_action "Uso de run project"
     pause
 }
 
@@ -189,14 +181,63 @@ help_menu() {
     read -p "Opción: " option
 
     case $option in
-        1) echo "ls, cd, pwd, chmod, grep..." ;;
-        2) echo "git clone, add, commit, push..." ;;
-        3) echo "Ctrl+C, Ctrl+Z, Ctrl+D..." ;;
-        4) echo "Ctrl+Shift+P, Ctrl+ ..." ;;
+                1)
+            echo "--- Comandos Bash ---"
+            echo "ls        -> Lista archivos y carpetas"
+            echo "cd        -> Cambiar de directorio"
+            echo "pwd       -> Muestra el directorio actual"
+            echo "mkdir     -> Crear directorio"
+            echo "rm        -> Borrar archivos o carpetas"
+            echo "cp        -> Copiar archivos"
+            echo "mv        -> Mover o renombrar archivos"
+            echo "cat       -> Mostrar contenido de un archivo"
+            echo "chmod     -> Cambiar permisos"
+            echo "grep      -> Buscar texto en archivos"
+            ;;
+        2)
+            echo "--- Comandos Git ---"
+            echo "git init        -> Inicializa repositorio"
+            echo "git status      -> Estado del repositorio"
+            echo "git add .       -> Añadir cambios"
+            echo "git commit -m   -> Crear commit"
+            echo "git log         -> Historial de commits"
+            echo "git branch      -> Ver ramas"
+            echo "git checkout    -> Cambiar de rama"
+            echo "git clone       -> Clonar repositorio"
+            echo "git pull        -> Descargar cambios"
+            echo "git push        -> Subir cambios"
+            ;;
+        3)
+            echo "--- Atajos Linux ---"
+            echo "Ctrl+C  -> Cancelar proceso"
+            echo "Ctrl+Z  -> Suspender proceso"
+            echo "Ctrl+D  -> Salir / EOF"
+            echo "Ctrl+L  -> Limpiar terminal"
+            echo "Ctrl+A  -> Ir al inicio de la línea"
+            echo "Ctrl+E  -> Ir al final de la línea"
+            echo "Ctrl+R  -> Buscar comandos anteriores"
+            echo "Tab     -> Autocompletar"
+            echo "↑ / ↓   -> Historial de comandos"
+            echo "Ctrl+U  -> Borrar línea completa"
+            ;;
+        4)
+            echo "--- Atajos VS Code ---"
+            echo "Ctrl+Shift+P -> Paleta de comandos"
+            echo "Ctrl+P       -> Abrir archivo rápido"
+            echo "Ctrl+\`       -> Abrir terminal"
+            echo "Ctrl+B       -> Mostrar/ocultar sidebar"
+            echo "Ctrl+D       -> Seleccionar siguiente coincidencia"
+            echo "Alt+↑ / ↓    -> Mover línea"
+            echo "Ctrl+/       -> Comentar línea"
+            echo "Ctrl+Shift+F -> Buscar en proyecto"
+            echo "Ctrl+S       -> Guardar archivo"
+            echo "Ctrl+Shift+X -> Extensiones"
+            ;;
         5) return ;;
         *) echo "Opción no válida" ;;
     esac
 
+    log_action "Uso de help menu"
     pause
 }
 
@@ -234,3 +275,4 @@ exit_program() {
 while true; do
     main_menu
 done
+
